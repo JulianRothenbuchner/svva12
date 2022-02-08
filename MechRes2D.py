@@ -149,8 +149,6 @@ def MechRes2D(inp):
     # October 2021 â€“ January 2022
     # ==============================End of Preamble================================
 
-    # !!! the input below is just for testing, will be removed for students !!!
-
     # name of the structure
 
     inp = {}  # initializing input
@@ -208,6 +206,8 @@ def MechRes2D(inp):
 
     # call the function that creates the geometry
     inp = ConstGeom(inp)
+    # print(inp)
+
 
     # force on point 3 in negative y-direction
     inp['P'][3*(3-1)+1] = 0  # [N]
@@ -644,6 +644,8 @@ def MechRes2D(inp):
              50, max(inp['points'][0, :])+50])
     plt.ylim([min(inp['points'][1, :])-50,
              max(max(inp['points'][1, :]), max(locDisp[1, :]))+50])
+
+    plt.savefig('displacements.png')
 
     # %% 8. Storing results to txt file and output structure
 
