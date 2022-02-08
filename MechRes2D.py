@@ -162,9 +162,9 @@ def MechRes2D(inp):
     inp['cl'] = 600  # [mm] Clearance of telescope with base plate
     inp['b'] = 700  # [mm] Base of standing legs telescope
     inp['phi'] = 30  # [deg] opening angle of dish
-    inp['type'] = 1  # [-] 1 if beam, 0 if rod structure is selected
+    inp['type'] = 0  # [-] 1 if beam, 0 if rod structure is selected
     # [-] 1 if full structure is portrayed, 0 if only half of structure is used
-    inp['sym'] = 0
+    inp['sym'] = 1 
 
     # delta T (will disappear in real input)
     inp['deltaT'] = 5e2
@@ -224,8 +224,7 @@ def MechRes2D(inp):
     # Check the provided input
     # --------------------------------------------------------------------------
     if 'parts' in inp.keys() == False:
-        print('Error: inp.parts has not been specified by user')
-       # return
+        raise Exception('Error: inp.parts has not been specified by user')
 
     # Display the structure for the user to check it visually
     # --------------------------------------------------------------------------
