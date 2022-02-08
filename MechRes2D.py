@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 import numpy as np
 import numpy.matlib as matlib
 import matplotlib.pyplot as plt
